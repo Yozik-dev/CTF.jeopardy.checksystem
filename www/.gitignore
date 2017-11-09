@@ -1,0 +1,10 @@
+vendor/*
+web/assets/*
+config/db.php
+runtime/*
+composer.lock
+composer.phar
+.idea
+runtime/*
+tests/*
+runtime

@@ -1,0 +1,1 @@
+ALTER TABLE `accepted_requests` ADD UNIQUE `unique_index`(`user_id`, `task_id`);

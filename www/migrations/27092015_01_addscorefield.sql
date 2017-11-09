@@ -1,0 +1,1 @@
+ALTER TABLE `users` ADD `score` INT NOT NULL DEFAULT '0' ;

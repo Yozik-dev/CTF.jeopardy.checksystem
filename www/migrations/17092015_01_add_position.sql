@@ -1,0 +1,1 @@
+ALTER TABLE `tasks` ADD `position` INT NOT NULL DEFAULT '1' ;

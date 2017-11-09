@@ -1,0 +1,1 @@
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `scoreboard` AS select `users`.`login` AS `login`,sum(`tasks`.`cost`) AS `result` from ((`accepted_requests` left join `tasks` on((`tasks`.`id` = `accepted_requests`.`task_id`))) left join `users` on((`users`.`id` = `accepted_requests`.`user_id`))) group by `accepted_requests`.`user_id`;

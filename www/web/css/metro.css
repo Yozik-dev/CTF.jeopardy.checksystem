@@ -1,0 +1,102 @@
+body {
+    font-family: "Open Sans", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5em;
+    font-weight: 400;
+}
+
+p, span, a, ul, li, button {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+strong {
+    font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Open Sans", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+    font-weight: bold !important;
+    font-size: 24px !important;
+    text-decoration: underline;
+}
+
+strong {
+    font-weight: 400;
+}
+
+.tile {
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    min-height: 80px;
+    background: url(../images/plate.png) no-repeat center;
+    background-size: contain;
+}
+.tile .title {
+    margin-top: 0px;
+}
+
+.tile.closed {
+    background: url(../images/plate-closed.png) no-repeat center;
+    background-size: contain;
+}
+.tile.done {
+    background: url(../images/plate-done.png) no-repeat center;
+    background-size: contain;
+}
+/*.tile.purple, .tile.blue, .tile.red, .tile.orange, .tile.green, .tile.maroon, .tile.silver, .tile.black, .tile.yellow {*/
+    /*color: #fff;*/
+/*}*/
+.tile.purple {
+    color: #5133AB;
+}
+.tile.red {
+    color: #AC193D;
+}
+.tile.green {
+    color: rgb(53, 86, 3);
+}
+.tile.blue {
+    color: #2672EC;
+}
+.tile.orange {
+    color: #ffff00;
+}
+.tile.black {
+    color: #020202;
+}
+.tile.yellow {
+    color: #ffff00;
+}
+.tile.maroon {
+    color: #800202;
+}
+.tile.silver {
+    color: #f9f9f9;
+}
+
+.tile img {
+    float: left;
+    margin-left: 7px;
+    margin-top: 7px;
+
+}
+
+.circle {
+    float: left;
+    background: green;
+    -moz-border-radius: 35px;
+    -webkit-border-radius: 35px;
+    border-radius: 35px;
+    width: 35px;
+    height: 35px;
+    margin-left: -10px;
+}
