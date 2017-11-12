@@ -42,7 +42,7 @@ class TasksListWidget extends Widget{
                     Html::tag('div',
                         $this->join_content($model)
                         , ['class' => 'tile closed ' . $model->getCategoryColor()])
-                    , ['class' => 'col-sm-2 b52']);
+                    , ['class' => 'col-sm-2 b52 hide']);
         else
             return Html::a(Html::tag('div',
                 Html::tag('div',
