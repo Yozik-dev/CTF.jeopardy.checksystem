@@ -32,7 +32,7 @@ AppAsset::register($this);
         'brandLabel' =>
             Html::img('/images/logo.png', ['align'=>"left", 'class'=>'brand-logo']) .
             Html::beginTag('div', ['class'=>'brand-text']) .
-            'Открытые межвузовские соревнования<br>в области информационной безопасности'.
+            'Всероссийские межвузовские соревнования<br>по защите информации'.
             Html::endTag('div'),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [

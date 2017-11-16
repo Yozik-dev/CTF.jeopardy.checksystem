@@ -120,11 +120,11 @@ class Tasks extends \yii\db\ActiveRecord
             0 => 'Crypto',
             1 => 'Web',
             2 => 'Reversing',
-            3 => 'PPC',
+            3 => 'Misc',
             4 => 'Stegano',
-            5 => 'Recon',
+            5 => 'Forensic',
 			6 => 'Juristic',
-            7 => 'Power station'
+            7 => 'Fight'
         ];
         return $data;
     }

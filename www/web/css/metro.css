@@ -35,13 +35,15 @@ strong {
     padding: 20px;
     margin-bottom: 30px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
     min-height: 80px;
     background: url(../images/plate.png) no-repeat center;
     background-size: contain;
+    letter-spacing: 1px;
 }
 .tile .title {
     margin-top: 0px;
+
 }
 
 .tile.closed {

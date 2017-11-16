@@ -60,7 +60,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <br>
 
             <div class="task-solvedteams alert alert-success">
-                Звездолеты, прилетевшие с миссии:
+                Отряды добровольцев, внесшие вклад в спасение:
                 <?php
                 foreach (Tasks::getTeamsSolvedTask($model->id) as $team)
                 {

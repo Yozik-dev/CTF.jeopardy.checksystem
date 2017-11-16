@@ -10,9 +10,9 @@
 }
 
 @font-face {
-    font-family: 'Basis';
+    font-family: 'Runic';
     src:
-    url('./fonts/basis.ttf') format('truetype');
+    url('./fonts/runic.ttf') format('truetype');
 }
 
 html,
@@ -236,11 +236,11 @@ a.desc:after {
 
 .tasks-view,
 .paper-view {
-    border: 10px solid #222;
+    border: 10px solid #b5afa1;
     padding: 10px;
-    background: #3a3a3a;
-    color: #28E825;
-    font-family: Matrix;
+    background: #f0e2bf;
+    color: #000100;
+    font-family: PT_SANS;
     text-indent: 20px;
 }
 
@@ -251,21 +251,21 @@ a.desc:after {
 
 .tasks-view .task-submit input,
 .paper-view .form-control {
-    background-color: #000;
-    color: #28E825;
-    border: 1px solid #777;
+    background-color: #f0e2bf;
+    color: #000100;
+    border: 1px solid #b5afa1;
 }
 
 .legend-paper {
-    border: 10px solid #222;
+    border: 10px solid #b5afa1;
     padding: 10px;
-    background: #3a3a3a;
+    background: #f0e2bf;
     margin-bottom: 30px;
     font-size: 16px;
     line-height: 26px;
     text-align: justify;
     text-indent: 20px;
-    color: #28E825;
+    color: #000100;
 }
 
 .legend-paper p {
@@ -277,15 +277,9 @@ a.desc:after {
     font-family: Matrix !important;
 }
 
-.matrix-cursor:after {
-    margin-left: 20px;
-    content: "█";
-    animation: blinker 1s cubic-bezier(1,0,0,1) infinite;
-}
-
-.basis {
-    color: #28E825;
-    font-family: Basis;
+.runic {
+    color: #000100;
+    font-family: Runic;
 }
 
 @keyframes blinker {
@@ -338,4 +332,30 @@ a.desc:after {
     position: absolute;
     right: -112px;
     top: 0;
+}
+
+.alert-success, .alert-info {
+    color: #000100;
+    background-color: rgba(181, 175, 161, 0.41);
+    border-color: #d6e9c6
+}
+
+.label-success {
+    background-color: rgba(181, 175, 161, 0.41);
+}
+
+.has-success .help-block, .has-success .control-label, 
+.has-success .radio, .has-success .checkbox, .has-success .radio-inline, 
+.has-success .checkbox-inline, .has-success.radio label, 
+.has-success.checkbox label, .has-success.radio-inline label, .has-success.checkbox-inline label {
+    color: #b5afa1;
+}
+
+.btn-primary {
+    background-color: #333;
+    border-color: #000;
+}
+
+.alert-danger {
+    color: ##b52522;
 }

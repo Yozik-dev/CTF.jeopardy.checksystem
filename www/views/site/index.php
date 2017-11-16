@@ -4,7 +4,7 @@
 
 use yii\helpers\Html;
 
-$this->title = 'KrasCTF - 2016';
+$this->title = 'KrasCTF - 2017';
 ?>
 
 <style>
@@ -12,14 +12,9 @@ $this->title = 'KrasCTF - 2016';
     .wrap {
         background: url(/images/bg_main.jpg) no-repeat top;
         background-size: cover;
+        background-position: 0 100px;
     }
 </style>
 <div class="site-index">
-
-<!--    <script type="text/javascript">-->
-<!--        setTimeout(function(){-->
-<!--            document.location = '/site/legend'-->
-<!--        }, 3000);-->
-<!--    </script>-->
 
 </div>
