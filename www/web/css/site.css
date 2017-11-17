@@ -27,7 +27,13 @@ body {
     height: auto;
     margin: 0 auto -60px;
     padding: 0 0 60px;
-    background: url(/images/bg_main.jpg) no-repeat top;
+    background: url(../images/bg_empty.png) no-repeat top;
+    background-size: cover;
+    background-position: 0 100px;
+}
+
+.wrap.wrap-index {
+    background: url(../images/bg_main.jpg) no-repeat top;
     background-size: cover;
     background-position: 0 100px;
 }
