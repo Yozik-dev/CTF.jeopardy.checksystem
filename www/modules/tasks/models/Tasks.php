@@ -135,18 +135,20 @@ class Tasks extends \yii\db\ActiveRecord
         return $main_checker->getCheckers();
     }
 
+    /**
+     * @param $task
+     * @param null $team
+     * @return bool
+     */
     public static function isTaskAccepted($task, $team = null)
     {
         $query = AcceptedRequests::find()
             ->where(["task_id" => $task]);
-        if($team){
+        if ($team) {
             $query->andWhere(["user_id" => $team]);
         }
-        
-        if ($query->one())
-            return true;
-        else
-            return false;
+
+        return !!$query->one();
     }
 
     public static function givePoints($team, $task)

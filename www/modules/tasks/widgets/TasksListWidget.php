@@ -5,9 +5,9 @@ use yii\base\Widget;
 use yii\helpers\Html;
 use app\modules\tasks\models\Tasks;
 
-class TasksListWidget extends Widget{
+class TasksListWidget extends Widget
+{
     public $tasks;
-    public $tasks_count;
     public $solved_tasks;
 
     private function join_container($text)
@@ -34,7 +34,7 @@ class TasksListWidget extends Widget{
             if ($model->visible)
                 return Html::a(Html::tag('div',
                     Html::tag('div',
-                            $this->join_content($model)
+                        $this->join_content($model)
                         , ['class' => 'tile ' . $model->getCategoryColor()])
                     , ['class' => 'col-sm-2 b52']), ['/tasks/view', 'id' => $model->id]);
             else
@@ -46,7 +46,7 @@ class TasksListWidget extends Widget{
         else
             return Html::a(Html::tag('div',
                 Html::tag('div',
-                        $this->join_content($model)
+                    $this->join_content($model)
                     , ['class' => 'tile done ' . $model->getCategoryColor()])
                 , ['class' => 'col-sm-2 b52']), ['/tasks/view', 'id' => $model->id]);
     }
@@ -59,27 +59,20 @@ class TasksListWidget extends Widget{
         ]);
     }
 
-    public function init(){
-        parent::init();
-        $this->tasks_count = count($this->tasks);
-
-    }
-
-    public function run(){
-
+    public function run()
+    {
         $template = "";
         $task = array_shift($this->tasks);
 
-        if (!$task)
+        if (!$task) {
             return $template;
+        }
 
-        foreach (Tasks::getCategories() as $category)
-        {
+        foreach (Tasks::getCategories() as $category) {
             $template_rows = "";
             $current_category = $task->category;
 
-            while ($task->category == $current_category)
-            {
+            while ($task->category == $current_category) {
                 $template_rows .= $this->join_tile($task);
 
                 $task = array_shift($this->tasks);
@@ -96,4 +89,5 @@ class TasksListWidget extends Widget{
         return $template;
     }
 }
+
 ?>

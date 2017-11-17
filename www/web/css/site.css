@@ -238,7 +238,7 @@ a.desc:after {
 .paper-view {
     border: 10px solid #b5afa1;
     padding: 10px;
-    background: #f0e2bf;
+    *background: #f0e2bf;
     color: #000100;
     font-family: PT_SANS;
     text-indent: 20px;
@@ -357,5 +357,96 @@ a.desc:after {
 }
 
 .alert-danger {
-    color: ##b52522;
+    color: #b52522;
+}
+
+
+/** TASKS and CATEGORIES */
+
+.tasks-category {
+    float: left;
+    width: 210px;
+}
+.papyrus {
+    width: 100%;
+    padding: 35px 20px 10px 25px;
+}
+.papyrus.papyrus1 {
+    background-image: url(../images/p0.png);
+    height: 160px;
+}
+.papyrus.papyrus2 {
+    background-image: url(../images/p1.png);
+    height: 234px;
+}
+.papyrus.papyrus3 {
+    background-image: url(../images/p2.png);
+    height: 268px;
+}
+.papyrus.papyrus4 {
+    background-image: url(../images/p3.png);
+    height: 298px;
+}
+.papyrus.papyrus5 {
+    background-image: url(../images/p4.png);
+    height: 358px;
+}
+.papyrus.papyrus6 {
+    background-image: url(../images/p5.png);
+    height: 394px;
+}
+
+.papyrus .cat-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.papyrus .cat-tasks {
+    margin-top: 10px;
+}
+.papyrus .cat-tasks a {
+    display: block;
+    padding: 10px;
+    color: black;
+    font-size: 18px;
+}
+.papyrus .cat-tasks a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+#task-modal .modal-content {
+    background-image: url(../images/plate.png);
+    background-repeat: no-repeat;
+    background-color: rgba(0,0,0,0);
+    background-size: cover;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.modal-content .tasks-view a {
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .modal-dialog {
+        width: 700px;
+        margin: 30px auto;
+    }
+    .modal-content .tasks-view {
+        border: none;
+        padding: 60px 70px 40px 95px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .modal-dialog {
+        width: 1000px;
+        margin: 30px auto;
+    }
+    .modal-content .tasks-view {
+        border: none;
+        padding: 80px 110px 50px 120px;
+    }
 }

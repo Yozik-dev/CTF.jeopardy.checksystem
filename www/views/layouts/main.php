@@ -78,6 +78,8 @@ AppAsset::register($this);
     </div>
 </div>
 
+<?= \yii\bootstrap\Modal::widget(['id' => 'task-modal']) ?>
+
 <footer class="footer">
     <div class="container">
         <p class="pull-left">&copy; Yozik <?= date('Y') ?></p>

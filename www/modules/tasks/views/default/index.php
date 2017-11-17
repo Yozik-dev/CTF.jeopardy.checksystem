@@ -1,6 +1,7 @@
 <?php
 
 use app\modules\tasks\widgets\TasksListWidget;
+use app\modules\tasks\widgets\TasksListWidget2;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -17,9 +18,8 @@ $this->registerCssFile("/css/metro.css");
 </div>
 
 <?php
-    echo TasksListWidget::widget([
-        'tasks' => $dataProvider->getModels(),
-        'tasks_count' => $dataProvider->getTotalCount(),
+    echo TasksListWidget2::widget([
+        'data' => $data,
         'solved_tasks' => Yii::$app->user->identity->getSolvedTasks()
     ]);
 ?>
