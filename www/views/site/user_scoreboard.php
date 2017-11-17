@@ -46,9 +46,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php endif; ?>
 </div>
 
-<!--<script>-->
-<!--    setTimeout(function(){-->
-<!--        location.reload();-->
-<!--    },5000);-->
-<!--</script>-->
+<script>
+    setTimeout(function(){
+        location.reload();
+    },5000);
+</script>
 
