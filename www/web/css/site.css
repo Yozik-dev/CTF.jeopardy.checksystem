@@ -430,9 +430,11 @@ a.desc:after {
     border-radius: 0;
 }
 
+.modal-content .tasks-view {
+    background: rgba(0,0,0,0);
+}
 .modal-content .tasks-view a {
     color: white;
-    background: rgba(0,0,0,0);
 }
 
 @media (min-width: 768px) {
