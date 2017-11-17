@@ -26,22 +26,7 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-<div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' =>
-            Html::img('/images/logo.png', ['align'=>"left", 'class'=>'brand-logo']) .
-            Html::beginTag('div', ['class'=>'brand-text']) .
-            'Всероссийские межвузовские соревнования<br>по защите информации'.
-            Html::endTag('div'),
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-static-top',
-        ],
-    ]);
-    echo '<div style="height: 15px;"></div>';
-    NavBar::end();
-    ?>
+<div class="wrap monitor-version">
 
     <div class="container">
         <?= $content ?>

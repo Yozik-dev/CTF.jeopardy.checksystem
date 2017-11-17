@@ -13,12 +13,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
 ?>
 
-<div class="panel panel-body">
+<div class="paper-view scoreboard panel panel-body">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'layout' => "{items}",
         'rowOptions' => function($model) {
-            return $model->user->isGuest() ? ['class' => 'info'] : [];
+            return $model->user->isGuest() ? ['class' => 'guest-team'] : [];
         },
         'columns' => [
             ['class' => SerialColumn::className()],
@@ -46,9 +46,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php endif; ?>
 </div>
 
-<script>
-    setTimeout(function(){
-        location.reload();
-    },5000);
-</script>
+<!--<script>-->
+<!--    setTimeout(function(){-->
+<!--        location.reload();-->
+<!--    },5000);-->
+<!--</script>-->
 

@@ -27,8 +27,13 @@ body {
     height: auto;
     margin: 0 auto -60px;
     padding: 0 0 60px;
-    background: url(/images/bg.jpg) no-repeat top;
+    background: url(/images/bg_main.jpg) no-repeat top;
     background-size: cover;
+    background-position: 0 100px;
+}
+
+.wrap.monitor-version {
+    background-position: 0;
 }
 
 .wrap > .container {
@@ -238,7 +243,7 @@ a.desc:after {
 .paper-view {
     border: 10px solid #b5afa1;
     padding: 10px;
-    *background: #f0e2bf;
+    background: #f0e2bf;
     color: #000100;
     font-family: PT_SANS;
     text-indent: 20px;
@@ -427,6 +432,7 @@ a.desc:after {
 
 .modal-content .tasks-view a {
     color: white;
+    background: rgba(0,0,0,0);
 }
 
 @media (min-width: 768px) {
@@ -449,4 +455,17 @@ a.desc:after {
         border: none;
         padding: 80px 110px 50px 120px;
     }
+}
+
+/** SCOREBOARD */
+.scoreboard table.table-striped > tbody > tr:nth-of-type(odd) {
+    background: #d0c2a2;
+}
+
+.scoreboard table.table-striped > tbody > tr.guest-team {
+    background: #d0ada0;
+}
+
+.scoreboard .table-bordered, .scoreboard .table-bordered th, .scoreboard .table-bordered td {
+    border: 1px solid #b5afa1;
 }
