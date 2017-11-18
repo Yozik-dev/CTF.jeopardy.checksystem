@@ -46,7 +46,7 @@ Yii::$app->view->registerJs($jsCode, \yii\web\View::POS_READY);
                     <?php foreach ($tasks as $task): ?>
                         <?php $solved = isset($solved_tasks[$task['id']]); ?>
                         <?= Html::a(
-                            Html::tag('div', $task['cost'], ['class' => ['cat-task', $solved ? 'cat-task-solved' : '']]),
+                            Html::tag('div', $task['cost'] ?: Html::img('/images/war.png', ['width' => '150px']), ['class' => ['cat-task', $solved ? 'cat-task-solved' : '']]),
                             ['/tasks/view', 'id' => $task['id']],
                             ['class' => 'cat-task-opening']
                         ) ?>

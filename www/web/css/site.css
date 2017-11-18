@@ -381,10 +381,11 @@ a.desc:after {
 .papyrus {
     width: 100%;
     padding: 35px 20px 10px 25px;
+    margin-bottom: 10px;
 }
 .papyrus.papyrus1 {
-    background-image: url(../images/p0.png);
-    height: 160px;
+    background-image: url(../images/p1.png);
+    height: 234px;
 }
 .papyrus.papyrus2 {
     background-image: url(../images/p1.png);
@@ -422,8 +423,35 @@ a.desc:after {
     font-size: 18px;
 }
 .papyrus .cat-tasks a:hover {
-    color: white;
+    text-shadow: 1px 1px 1px #000;
     text-decoration: none;
+}
+
+.cat-task {
+    position: relative;
+}
+.cat-task.cat-task-solved {
+    text-decoration: underline;
+}
+.cat-task.cat-task-solved:after {
+    content: ' ';
+    display: inline-block;
+    height: 20px;
+    width: 10px;
+    top: 2px;
+    margin-left: 5px;
+    position: absolute;
+    background: url('../images/task-done.png') no-repeat;
+}
+.cat-task.cat-task-solved:before {
+    content: ' ';
+    display: inline-block;
+    height: 20px;
+    width: 10px;
+    top: 2px;
+    margin-left: -15px;
+    position: absolute;
+    background: url('../images/task-done.png') no-repeat;
 }
 
 #task-modal .modal-content {
@@ -438,6 +466,7 @@ a.desc:after {
 
 .modal-content .tasks-view {
     background: rgba(0,0,0,0);
+    text-indent: unset;
 }
 .modal-content .tasks-view a {
     color: white;
@@ -452,6 +481,9 @@ a.desc:after {
         border: none;
         padding: 60px 70px 40px 95px;
     }
+    #task-modal .modal-content {
+        background-image: url(../images/plate700.png);
+    }
 }
 
 @media (min-width: 1200px) {
@@ -463,6 +495,13 @@ a.desc:after {
         border: none;
         padding: 80px 110px 50px 120px;
     }
+    #task-modal .modal-content {
+        background-image: url(../images/plate1000.png);
+    }
+}
+
+.tasks-hints .task-hint {
+
 }
 
 /** SCOREBOARD */

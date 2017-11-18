@@ -24,9 +24,10 @@ use yii\helpers\HtmlPurifier;
 
         <div class="tasks-hints">
             <?php if (count($model->hints)) {
-                echo Html::tag("h3", "Подсказки");
+                echo Html::tag("h4", "Подсказки");
+                $i = 1;
                 foreach ($model->hints as $hint) {
-                    echo Html::tag("div", $hint->content, ["class" => "task-hint"]);
+                    echo Html::tag("div", $i++ . '. ' . $hint->content, ["class" => "task-hint"]);
                 }
             } ?>
         </div>
@@ -71,7 +72,7 @@ $('#send-flag').click(function(){
             if (data['status']){
                 $('.tasks-result').html('<div class=\'alert alert-success\' role=\'alert\'>Флаг принят!</div>');
                 setTimeout(function () {
-                    window.reload();
+                    window.location.reload();
                 }, 5000);
             } else {
                 $('.tasks-result').html('<div class=\'alert alert-danger\' role=\'alert\'>' + data['text'] + '</div>');
