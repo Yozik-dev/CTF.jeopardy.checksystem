@@ -252,7 +252,6 @@ a.desc:after {
     background: #f0e2bf;
     color: #000100;
     font-family: PT_SANS;
-    text-indent: 20px;
 }
 
 .tasks-view .task-submit input[type=text] {
