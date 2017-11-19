@@ -72,7 +72,7 @@ class RequestsSearch extends Requests
             'result' => $this->result,
         ]);
 
-        $query->andFilterWhere(['like', 'answer', $this->answer]);
+        $query->andFilterWhere(['like', 'r.answer', $this->answer]);
         $query->andFilterWhere(['like', 'u.login', $this->userlogin]);
         $query->andFilterWhere(['like', 't.title', $this->tasktitle]);
         $query->andFilterWhere(['t.category' => $this->taskcat]);
