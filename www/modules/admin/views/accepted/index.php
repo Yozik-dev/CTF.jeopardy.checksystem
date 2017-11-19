@@ -1,10 +1,12 @@
 <?php
 
+use app\modules\admin\models\search\AcceptedSearch;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+/* @var $searchModel AcceptedSearch */
 
 $this->title = 'Accepted Requests';
 $this->params['breadcrumbs'][] = $this->title;
@@ -19,14 +21,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
         'columns' => [
-
             'id',
-            'user_id',
-            'user.login',
-            'task_id',
-            'task.title',
-
+            'login',
+            'title',
+            'created',
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

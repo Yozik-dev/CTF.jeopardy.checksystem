@@ -2,6 +2,7 @@
 
 namespace app\modules\admin\controllers;
 
+use app\modules\admin\models\search\AcceptedSearch;
 use Yii;
 use app\models\AcceptedRequests;
 use yii\data\ActiveDataProvider;
@@ -48,15 +49,12 @@ class AcceptedController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => AcceptedRequests::find(),
-            'sort' => [
-                'defaultOrder' => ['id' => SORT_DESC],
-            ]
-        ]);
+        $searchModel = new AcceptedSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'dataProvider' => $dataProvider,
+            'searchModel' => $searchModel,
         ]);
     }
 

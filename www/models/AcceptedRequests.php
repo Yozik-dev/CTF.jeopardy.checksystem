@@ -11,6 +11,7 @@ use Yii;
  * @property integer $id
  * @property integer $user_id
  * @property integer $task_id
+ * @property string $created
  */
 class AcceptedRequests extends \yii\db\ActiveRecord
 {
@@ -45,6 +46,7 @@ class AcceptedRequests extends \yii\db\ActiveRecord
             'id' => 'ID',
             'user_id' => 'User ID',
             'task_id' => 'Task ID',
+            'created' => 'Дата',
         ];
     }
 

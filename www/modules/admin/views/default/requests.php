@@ -19,7 +19,14 @@ $this->params['breadcrumbs'][] = $this->title;
     'columns' => [
         'id',
         'userlogin',
-        'task.categoryName',
+        [
+            'attribute' => 'taskcat',
+            'label' => 'Категория',
+            'value' => function ($m) {
+                return $m->task->categoryName;
+            },
+            'filter' => \app\modules\tasks\models\Tasks::getCategories()
+        ],
         'tasktitle',
         'task.cost',
         'answer',

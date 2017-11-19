@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use app\modules\tasks\models\Tasks;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
@@ -14,36 +15,31 @@ class RequestsSearch extends Requests
 {
     public $tasktitle;
     public $userlogin;
+    public $taskcat;
+
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['id', 'user_id', 'task_id', 'result'], 'integer'],
+            [['id', 'user_id', 'task_id', 'result', 'taskcat'], 'integer'],
             [['answer', 'created', 'tasktitle', 'userlogin'], 'safe'],
         ];
     }
 
     /**
-     * @inheritdoc
-     */
-    public function scenarios()
-    {
-        // bypass scenarios() implementation in the parent class
-        return Model::scenarios();
-    }
-
-    /**
      * Creates data provider instance with search query applied
-     *
      * @param array $params
-     *
      * @return ActiveDataProvider
      */
     public function search($params)
     {
-        $query = Requests::find();
+        $query = Requests::find()
+            ->alias('r')
+            ->innerJoin(Tasks::tableName() . ' t', 'r.task_id=t.id')
+            ->innerJoin(Users::tableName() . ' u', 'r.user_id=u.id')
+            ->select(['r.*', 'userlogin' => 'u.login', 'tasktitle' => 't.title']);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -53,18 +49,8 @@ class RequestsSearch extends Requests
             'defaultOrder' => ['id' => SORT_DESC],
             'attributes' => [
                 'id',
-                'userlogin' => [
-                    'asc' => ['users.login' => SORT_ASC],
-                    'desc' => ['users.login' => SORT_DESC],
-                    'label' => 'user',
-                    'default' => SORT_ASC
-                ],
-                'tasktitle' => [
-                    'asc' => ['tasks.title' => SORT_ASC],
-                    'desc' => ['tasks.title' => SORT_DESC],
-                    'label' => 'task',
-                    'default' => SORT_ASC
-                ],
+                'userlogin',
+                'tasktitle',
                 'answer',
                 'created',
                 'result'
@@ -87,14 +73,9 @@ class RequestsSearch extends Requests
         ]);
 
         $query->andFilterWhere(['like', 'answer', $this->answer]);
-
-        $query->joinWith(["user" => function ($q) {
-            $q->where("users.login LIKE '%" . $this->userlogin . "%'");
-        }]);
-
-        $query->joinWith(["task" => function ($q) {
-            $q->where("tasks.title LIKE '%" . $this->tasktitle . "%'");
-        }]);
+        $query->andFilterWhere(['like', 'u.login', $this->userlogin]);
+        $query->andFilterWhere(['like', 't.title', $this->tasktitle]);
+        $query->andFilterWhere(['t.category' => $this->taskcat]);
 
         return $dataProvider;
     }

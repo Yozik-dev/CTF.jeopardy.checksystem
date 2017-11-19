@@ -57,6 +57,7 @@ class Tasks extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'title' => 'Название',
+            'categoryName' => 'Категория',
             'description' => 'Описание',
             'cost' => 'Стоимость',
             'visible' => 'Открыто',

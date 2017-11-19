@@ -99,6 +99,9 @@ class SiteController extends Controller
 
         $dataProvider = new ActiveDataProvider([
             'query' => Scoreboard::find(),
+            'sort' => [
+                'defaultOrder' => ['result' => SORT_DESC],
+            ],
             'pagination' => [
                 'pageSize' => 20,
             ],
