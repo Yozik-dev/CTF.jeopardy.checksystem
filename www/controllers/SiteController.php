@@ -114,6 +114,7 @@ class SiteController extends Controller
 
     public function actionSubmit()
     {
+        return false;
         Yii::$app->response->format = Response::FORMAT_JSON;
         if(Yii::$app->user->isGuest){
             return ['status' => false, 'text' => 'Войдите в систему перед тем как слать флаг'];

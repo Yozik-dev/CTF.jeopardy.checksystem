@@ -74,7 +74,8 @@ AppAsset::register($this);
     ?>
 
     <div class="container">
-        <?= $content ?>
+        <?php // $content ?>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8XF1sqTC36s?autoplay=1" frameborder="0" gesture="media" allowfullscreen></iframe>
     </div>
 </div>
 
